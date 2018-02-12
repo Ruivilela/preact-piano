@@ -6,16 +6,16 @@ import { Provider } from "redux-zero/preact";
 
 import "./style.scss";
 
-import Counter from "./components/Counter";
+import Piano from './components/piano/index'
+
 import store from "./state/store";
 
 class App extends Component {
   render(props) {
     return (
       <div>
-        <h1 style={{ color: props.color }}>Hello, World!</h1>
         <Provider store={store}>
-          <Counter />
+          <Piano />
         </Provider>
       </div>
     );
@@ -25,6 +25,6 @@ class App extends Component {
 let _habitat = habitat(App);
 
 _habitat.render({
-  selector: '[data-widget-host="habitat"]',
+  selector: '[data-app="app"]',
   clean: true
 });
