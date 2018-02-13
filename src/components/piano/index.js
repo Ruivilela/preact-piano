@@ -1,7 +1,5 @@
 import { Component } from 'preact';
 
-import style from './style';
-
 import { allNotes, whiteNotes, blackNotes } from './../../../bd/scales'; 
 import Key from './key/index';
  
@@ -41,14 +39,14 @@ class Piano extends Component {
     }); 
 
     return(
-      <div style={style}>
-        <div style={style.black1}>
+      <div class="piano-octave">
+        <div class="black-keys-left">
           { blackKeys1 }
         </div>
-        <div style={style.black2}>
+        <div class="black-keys-right">
           { blackKeys2 }
         </div>
-        <div style={style.white}>
+        <div class="white-keys">
           { whiteKeys }
         </div>
       </div>

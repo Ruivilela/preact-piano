@@ -1,4 +1,3 @@
-import style from './style.js'; 
 import { Component } from 'preact';
 import { noteValuesFrequency } from './../../../../bd/scales'; 
 

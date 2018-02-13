@@ -158,5 +158,37 @@ export const noteValuesFrequency = {
     'C8': 4186.01
 }
 
-export const major_scales = [0,2,4,5,7,9,11]
-
+export const scales_list = {
+    acoustic: {
+        intervals: ['C','D','E','F#','G','A','A#'],
+        name:'acoustic scale'
+    },
+    altered: {
+        intervals: ['C','C#','D#', 'E', 'F#', 'G#','A#' ],
+        name: 'altered scale'
+    },
+    augmented: {
+        intervals: ['C', 'D#', 'E', 'G', 'G#', 'B'],
+        name: 'augmented scale'
+    },
+    bebop_dominant: {
+        intervals: ['C','D', 'E', 'F', 'G', 'A','A#', 'B'],
+        name: 'bebop dominant scale'
+    },
+    blues: {
+        intervals: ['C', 'D#', 'F', 'F#', 'G', 'A#'],
+        name: 'blues scale'
+    },
+    chromatic: {
+        intervals: ['C', 'C#', 'D','D#','F','F#','G','G#','A','A#','B'],
+        name: 'chromatic scale'
+    },
+    double_harmonic:{
+        intervals: ['C', 'C#','E','F', 'G', 'G#', 'B'],
+        name: 'double harmonic scale'
+    },
+    enigmatic: {
+        intervals: [ 'C', 'C#','E', 'F#','G#','A#', 'B'],
+        name: 'enigmatic scale'
+    }
+}
