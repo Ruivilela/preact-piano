@@ -3,21 +3,27 @@ import { Component } from 'preact';
 import style from './style';
 
 import { allNotes, whiteNotes, blackNotes } from './../../../bd/scales'; 
-import WhiteKeys from './white-keys/index';
-import BlackKeys from './black-keys/index'; 
+import Key from './key/index';
  
-
 class Piano extends Component {
 
   render(){
     const whiteKeys = whiteNotes.map( (key) => (
-      <WhiteKeys pianoKey={key} octave={this.props.octave}/>
+      <Key 
+        className="white-key" 
+        pianoKey={key} 
+        octave={this.props.octave}
+      />
     ))
 
     const blackKeys1 = blackNotes.map( (key, index) => {
       if( index < 2 ) {
         return(
-          <BlackKeys pianoKey={key} />
+          <Key 
+            className="black-key" 
+            pianoKey={key}
+            octave={this.props.octave} 
+          />
         )
       }
     }); 
@@ -25,7 +31,11 @@ class Piano extends Component {
     const blackKeys2 = blackNotes.map( (key, index) => {
       if( index > 1 ) {
         return(
-          <BlackKeys pianoKey={key} />
+          <Key 
+            className="black-key" 
+            pianoKey={key} 
+            octave={this.props.octave}
+          />
         )
       }
     }); 

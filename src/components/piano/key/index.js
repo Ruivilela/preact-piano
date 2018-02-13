@@ -4,20 +4,21 @@ import { noteValuesFrequency } from './../../../../bd/scales';
 
 let audioCtx; 
 
-class WhiteKeys extends Component {
+class Key extends Component {
     render(){
         return(
             <div 
-                class="white-key" 
-                style={style}
-                onClick={this.playKey.bind(this)}
+                class={ this.props.className }
+                onClick={ this.playKey.bind(this) }
             >
             </div>
         )
     }
 
     playKey(){
-        if(audioCtx){ audioCtx.close()}
+        if(audioCtx){ 
+            audioCtx.close()
+        }
 
         audioCtx = new AudioContext();
         let osc = audioCtx.createOscillator();
@@ -40,5 +41,5 @@ class WhiteKeys extends Component {
     }
 }
 
-export default WhiteKeys
+export default Key
 

@@ -12,10 +12,18 @@ import store from "./state/store";
 
 class App extends Component {
   render(props) {
+
+    let piano = []
+    for(let i = 3; i < 6 ; i++){
+      piano.push(<Piano octave={i} />)
+    }
+
     return (
       <div>
-        <Provider store={store}>
-          <Piano octave={3} />
+        <Provider store={store} >
+          <div style="display:flex"> 
+           { piano }
+          </div>
         </Provider>
       </div>
     );
