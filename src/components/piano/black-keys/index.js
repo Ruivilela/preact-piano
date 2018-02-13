@@ -4,7 +4,7 @@ import { Component } from 'preact';
 class BlackKeys extends Component {
     render(){
         return(
-            <div style={style}>
+            <div class="black-key" style={style}>
             </div>
         )
     }

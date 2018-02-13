@@ -11,7 +11,7 @@ class Piano extends Component {
 
   render(){
     const whiteKeys = whiteNotes.map( (key) => (
-      <WhiteKeys pianoKey={key} />
+      <WhiteKeys pianoKey={key} octave={this.props.octave}/>
     ))
 
     const blackKeys1 = blackNotes.map( (key, index) => {

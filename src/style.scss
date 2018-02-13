@@ -6,3 +6,15 @@ html, body {
 h1 {
 	text-align: center;
 }
+
+.white-key:active {
+	background-color:lightgrey;  
+}
+
+.black-key {
+	background-color:black; 
+}
+
+.black-key:active {
+	background-color:grey;  
+}

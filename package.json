@@ -25,11 +25,11 @@
     "sass-loader": "^6.0.6"
   },
   "dependencies": {
-    "preact": "^8.2.5",
-    "preact-compat": "^3.17.0",
-    "preact-habitat": "^3.1.0",
-    "preact-router": "^2.5.7",
-    "redux-zero": "^4.9.1"
+    "preact": "^8.2.7",
+    "preact-compat": "^3.18.0",
+    "preact-habitat": "^3.2.1",
+    "preact-router": "^2.6.0",
+    "redux-zero": "^4.10.1"
   },
   "jest": {
     "verbose": true,

@@ -15,7 +15,7 @@ class App extends Component {
     return (
       <div>
         <Provider store={store}>
-          <Piano />
+          <Piano octave={3} />
         </Provider>
       </div>
     );
