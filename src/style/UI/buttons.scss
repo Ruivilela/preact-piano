@@ -1,0 +1,42 @@
+button {
+	width: 50px;
+	color: #202129; 
+	padding: 12px 12px;
+	cursor: pointer; 
+	margin: 10px;
+	text-align: center; 
+	box-shadow: 2px 5px 10px #e4e4e4; 
+	flex: 0 0 160px; 
+	background-color: #f2f2f2; 
+	user-select: none;
+	transition: all 150ms linear;
+	text-decoration: none !important;
+	text-transform: none;
+	text-transform: capitalize;
+	border-radius: 4px;
+	font-size: 13px;
+	font-weight: 500;
+	line-height: 1.3;
+
+	&:hover {
+		color: #202129;
+		background-color: #e1e2e2;
+		opacity: 1;
+	}
+
+	&:active {
+		background-color: #d5d6d6;
+		opacity: 1;
+	}
+}
+
+.option-menu {
+	display: flex; 
+	justify-content: center; 
+	margin-top: 5%; 
+	margin-bottom: 5%; 
+}
+
+.select-button {
+	margin-top: 1%;
+}
