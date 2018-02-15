@@ -3,10 +3,12 @@
 // components
 @import 'style/components/piano'; 
 @import 'style/components/keys'; 
+@import 'style/components/options-menu';
 
 
 html, body {
-	font: 14px/1.21 'Helvetica Neue', arial, sans-serif;
+	// font: 14px/1.21 'Helvetica Neue', arial, sans-serif;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 	font-weight: 400;
 }
 

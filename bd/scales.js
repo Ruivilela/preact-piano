@@ -161,34 +161,42 @@ export const noteValuesFrequency = {
 export const scales_list = {
     acoustic: {
         intervals: ['C','D','E','F#','G','A','A#'],
-        name:'acoustic scale'
+        name:'acoustic scale', 
+        key: 'acoustic'
     },
     altered: {
         intervals: ['C','C#','D#', 'E', 'F#', 'G#','A#' ],
-        name: 'altered scale'
+        name: 'altered scale',
+        key: 'altered'
     },
     augmented: {
         intervals: ['C', 'D#', 'E', 'G', 'G#', 'B'],
-        name: 'augmented scale'
+        name: 'augmented scale',
+        key:'augmented'
     },
     bebop_dominant: {
         intervals: ['C','D', 'E', 'F', 'G', 'A','A#', 'B'],
-        name: 'bebop dominant scale'
+        name: 'bebop dominant scale',
+        key: 'bebop_dominant'
     },
     blues: {
         intervals: ['C', 'D#', 'F', 'F#', 'G', 'A#'],
-        name: 'blues scale'
+        name: 'blues scale',
+        key: 'blues'
     },
     chromatic: {
         intervals: ['C', 'C#', 'D','D#','F','F#','G','G#','A','A#','B'],
-        name: 'chromatic scale'
+        name: 'chromatic scale',
+        key: 'chromatic'
     },
     double_harmonic:{
         intervals: ['C', 'C#','E','F', 'G', 'G#', 'B'],
-        name: 'double harmonic scale'
+        name: 'double harmonic scale',
+        key: 'double_harmonic'
     },
     enigmatic: {
         intervals: [ 'C', 'C#','E', 'F#','G#','A#', 'B'],
-        name: 'enigmatic scale'
+        name: 'enigmatic scale',
+        key: 'enigmatic'
     }
 }

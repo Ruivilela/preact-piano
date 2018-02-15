@@ -2,10 +2,10 @@ import createStore from "redux-zero";
 import { applyMiddleware } from 'redux-zero/middleware';
 import { connect } from 'redux-zero/devtools';
 
-import counterState from './counter/state';
+import selectState from './select/state';
 
 const state = {
-    counter: counterState
+    select: selectState
 }
 
 const middlewares = connect ? applyMiddleware(connect(state)): [];

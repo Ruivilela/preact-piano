@@ -1,0 +1,39 @@
+@mixin each($num) {
+    &:nth-child(#{$num}n) {
+      @content
+    }
+}
+
+.select-options {
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: center;
+}
+
+.option-item {
+    font-size: 18px;   
+    display: inline-block;
+    flex-grow: 1;
+    margin-left: 5%; 
+    text-align: center; 
+    width: calc(100% * (1/5));
+    height: 50px;
+
+    &:first-child{
+        margin-left:0%; 
+    }
+
+    &:nth-child(5n){
+        margin-left:0%; 
+    }
+
+    &:hover {
+        font-size: 25px;
+        cursor: pointer;  
+    }
+}
+
+.selected-option {
+    font-size: 25px;
+    color:darkgrey;
+}

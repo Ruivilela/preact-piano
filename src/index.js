@@ -6,9 +6,10 @@ import { Provider } from "redux-zero/preact";
 
 import "./style.scss";
 
-import Piano from './components/piano/index'
+import Piano from './components/piano'
 import SelectKey from './components/UI/select-key'; 
 import SelectButton from './components/UI/select-button';
+import OptionsMenu from './components/options-menu/index'; 
 
 import store from "./state/store";
 
@@ -32,12 +33,13 @@ class App extends Component {
             </div>
             <div class="option-menu select-button">
               <SelectButton 
-                title={"scales"} 
+                title={"scales"}
               />
               <SelectButton 
-                title={"chords"} 
+                title={"chords"}
               />
             </div>
+            <OptionsMenu />
           </div>
         </Provider>
       </div>
