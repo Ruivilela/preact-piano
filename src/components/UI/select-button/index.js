@@ -11,14 +11,22 @@ class SelectButton extends Component {
     render(){        
         return(
             <Connect mapToProps={mapToProps} actions={actions}>
-                {({select, button_clicked})=> (
-                    <button 
-                        class="select-button"
-                        onClick={() => button_clicked(this.props.title)}
-                    >
-                        { this.props.title }
-                    </button>
-                )}
+                {({select, button_clicked})=> {
+
+                    let className = 
+                        select.button_clicked.name === this.props.title ? 
+                            'select-option-button button-selected' : 
+                            'select-option-button';
+                            
+                    return(
+                        <button 
+                            class={ className }
+                            onClick={() => button_clicked(this.props.title)}
+                        >
+                            { this.props.title }
+                        </button>
+                    )
+                }}
             </Connect>
         ) 
     }

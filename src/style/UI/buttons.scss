@@ -17,6 +17,11 @@ button {
 	font-size: 13px;
 	font-weight: 500;
 	line-height: 1.3;
+	border: none; 
+
+	&:focus {
+		outline:0;
+	}
 
 	&:hover {
 		color: #202129;
@@ -37,6 +42,12 @@ button {
 	margin-bottom: 3%; 
 }
 
-.select-button {
+.select-option-button {
 	margin-top: 1%;
+}
+
+.button-selected {
+	color: #202129;
+	background-color: #e1e2e2;
+	opacity: 1;
 }

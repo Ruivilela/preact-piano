@@ -12,12 +12,19 @@ export default ({setState}) => ({
                 break; 
         }
 
+        let clicked = 
+            payload === state.select.button_clicked.name ?
+                false : true; 
+
+        let name = clicked ? payload : ''; 
+        data = clicked ? data : []
+
         return { 
             select: {
                 ...state.select, 
                 button_clicked: {
-                    clicked: true,
-                    name: payload,
+                    clicked: clicked,
+                    name: name,
                     data: data
                 }
             }
@@ -34,6 +41,23 @@ export default ({setState}) => ({
             select: {
                 ...state.select,
                 option_selected: {
+                    name: name,
+                    selected: selected
+                }
+            }
+        }
+    },
+    select_key: (state, payload) => {
+        let selected = 
+            state.select.selected_key.name === payload ?
+                false : true; 
+        
+        let name = selected ? payload : '';
+
+        return {
+            select: {
+                ...state.select,
+                selected_key: {
                     name: name,
                     selected: selected
                 }
