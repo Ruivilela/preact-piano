@@ -3,9 +3,11 @@ import { applyMiddleware } from 'redux-zero/middleware';
 import { connect } from 'redux-zero/devtools';
 
 import selectState from './select/state';
+import pianoState from './piano/state';
 
 const state = {
-    select: selectState
+    select: selectState,
+    piano: pianoState
 }
 
 const middlewares = connect ? applyMiddleware(connect(state)): [];

@@ -8,20 +8,22 @@ const mapToProps = ({ select }) => ({ select });
 import { allNotes } from './../../../../bd/scales'
 
 class SelectButton extends Component {
-    render(){        
+    render(){  
         return(
             <Connect mapToProps={mapToProps} actions={actions}>
-                {({select, button_clicked})=> {
-
+                {({select, button_clicked, highlight_notes})=> {
                     let className = 
                         select.button_clicked.name === this.props.title ? 
                             'select-option-button button-selected' : 
                             'select-option-button';
-                            
+
                     return(
                         <button 
                             class={ className }
-                            onClick={() => button_clicked(this.props.title)}
+                            onClick={() => ( 
+                                button_clicked(this.props.title), 
+                                highlight_notes()
+                            )}
                         >
                             { this.props.title }
                         </button>

@@ -1,4 +1,8 @@
-import { scales_list } from './../../../bd/scales'
+import { 
+    scales_list, 
+    allNotes , 
+    allNotes_reverse
+} from './../../../bd/scales'
 
 export default ({setState}) => ({
     button_clicked: (state, payload) => {
@@ -18,8 +22,8 @@ export default ({setState}) => ({
 
         let name = clicked ? payload : ''; 
         data = clicked ? data : []
-
         return { 
+            ...state,
             select: {
                 ...state.select, 
                 button_clicked: {
@@ -38,6 +42,7 @@ export default ({setState}) => ({
             false : true; 
 
         return { 
+            ...state,
             select: {
                 ...state.select,
                 option_selected: {
@@ -55,13 +60,44 @@ export default ({setState}) => ({
         let name = selected ? payload : '';
 
         return {
+            ...state,
             select: {
                 ...state.select,
                 selected_key: {
                     name: name,
                     selected: selected
-                }
+                }   
+            }
+        }
+    },
+    highlight_notes: (state) => {
+
+        let piano_output = 
+            state.select.button_clicked.clicked 
+            && state.select.selected_key.selected 
+            && state.select.option_selected.selected ?
+                generate_notes(state) : []; 
+
+        return {
+            ...state,
+            select:{
+                ...state.select,
+                piano_output: piano_output
             }
         }
     }
 });
+
+function generate_notes(state){
+    let root = allNotes[state.select.selected_key.name]
+
+    return state.select.button_clicked.data[
+        state.select.option_selected.name
+    ].intervals
+        .map( (value) => ( allNotes[value]))
+        .map( (value) => (
+            value + root > 11 ? 
+                allNotes_reverse[value + root - 12] : 
+                allNotes_reverse[value + root] 
+        ))
+}

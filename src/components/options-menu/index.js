@@ -10,7 +10,7 @@ class OptionsMenu extends Component {
         return(
             <Connect mapToProps={mapToProps} actions={ actions }>
                 {
-                    ({select, option_selected}) => {
+                    ({select, option_selected, highlight_notes }) => {
                         let options = 
                             !select.button_clicked.clicked ?
                                 '' : Object.values(select.button_clicked.data)
@@ -23,7 +23,10 @@ class OptionsMenu extends Component {
                                             return(
                                                 <div 
                                                     class={className}
-                                                    onClick={() => ( option_selected(value.key))}
+                                                    onClick={() => ( 
+                                                        option_selected(value.key),
+                                                        highlight_notes()
+                                                    )}
                                                 >
                                                     { value.name }
                                                 </div>

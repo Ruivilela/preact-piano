@@ -13,7 +13,7 @@ class SelectKey extends Component {
         
         return(
             <Connect mapToProps={mapToProps} actions={actions}>
-                { ({ select, select_key }) => {
+                { ({ select, select_key , highlight_notes }) => {
 
                     const options = Object.keys(allNotes).map((key) => {
 
@@ -24,7 +24,10 @@ class SelectKey extends Component {
                         return(
                             <button 
                                 class={className}
-                                onClick={ () => ( select_key(key) )}
+                                onClick={ () => ( 
+                                    select_key(key), 
+                                    highlight_notes() 
+                                )}
                             > 
                                 { key } 
                             </button> 

@@ -11,7 +11,8 @@ const selectState = {
     option_selected: {
         name: '',
         selected: false
-    }
+    },
+    piano_output:[]
 }
 
 export default selectState

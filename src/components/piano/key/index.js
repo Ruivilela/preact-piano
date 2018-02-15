@@ -1,16 +1,37 @@
 import { Component } from 'preact';
 import { noteValuesFrequency } from './../../../../bd/scales'; 
+import { Connect } from "redux-zero/preact";
+
 
 let audioCtx; 
 
+const mapToProps = ({ select }) => ({ select });
+
 class Key extends Component {
-    render(){
+    render(props){
         return(
-            <div 
-                class={ this.props.className }
-                onClick={ this.playKey.bind(this) }
-            >
-            </div>
+            <Connect mapToProps={mapToProps}>
+                { ({ select }) => {
+                    let pressDownKey = select.piano_output.reduce(
+                        (acc, cv) => (
+                            acc != cv ? 
+                                acc : cv === select.selected_key.name ? 
+                                    'root-press-down' : 'key-press-down'
+                        ), 
+                        props.pianoKey
+                    )
+
+                    pressDownKey = pressDownKey === props.pianoKey ? '' : pressDownKey; 
+
+                    return(
+                        <div 
+                            class={`${this.props.className} ${pressDownKey}`}
+                            onClick={ this.playKey.bind(this) }
+                        >
+                        </div>
+                    )
+                }}
+            </Connect>
         )
     }
 
